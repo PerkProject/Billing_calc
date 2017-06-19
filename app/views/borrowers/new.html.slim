@@ -1,0 +1,16 @@
+.offset-xs-4.col-xs-8
+=form_for Borrower.new do |f|
+  h1 Добавить заемщика
+  .form-group
+  p
+  = f.label :Имя
+  = f.text_field :name
+  .form-group
+  = f.label :Описание
+  = f.text_area :desc, class: "form-control"
+  .form-group
+  p
+  = f.submit 'Создать', class: "btn btn-info float-xs-right"
+
+.form-group
+= link_to 'Назад', borrowers_path

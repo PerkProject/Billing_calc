@@ -1,0 +1,13 @@
+h1 Список заемщиков
+table.table.table-hover#borrowers-list
+  thread
+    tr
+      th Название
+    tbody
+    -unless @borrowers.empty?
+      = render @borrowers
+    -else
+      tr
+        td
+p
+  =link_to 'Добавить заемщика', new_borrower_path

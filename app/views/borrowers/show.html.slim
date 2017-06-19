@@ -1,0 +1,6 @@
+h1#caption= @borrower.name
+ #borrower data-id="#{@borrower.id}"
+   #borrower-desc
+p= @borrower.desc
+
+ = link_to "Назад", borrower_path, class: "btn btn-info"
