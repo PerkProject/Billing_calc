@@ -1,0 +1,25 @@
+.offset-xs-4.col-xs-8
+=form_for Loan.new do |f|
+  h1 Добавить информацию по займу
+  .form-group
+  p
+  = f.label :" Доходность годовых "
+  = f.number_field :interest_paid
+
+  p
+  = f.label :" Выплаченно % "
+  = f.number_field :return_rate
+
+  p
+  = f.label :" Выплачено ОД "
+  = f.number_field :paid_out
+
+  p
+  = f.label :Заемщик
+  = f.select :borrower_id , Borrower.all.map {|r| [r.id]}, { }, class:"form-control"
+
+  p
+  = f.submit 'Создать', class: "btn btn-info float-xs-right"
+
+.form-group
+= link_to 'Назад', loans_path

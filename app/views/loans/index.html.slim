@@ -1,0 +1,16 @@
+h1 Список займов
+table.table.table-hover#loans-list
+  thread
+    tr
+      th Выплаченно %
+      th Выплачено ОД
+      th Доходность годовых
+      th История платежей
+    tbody
+    -unless @loans.empty?
+      = render @loans
+    -else
+      tr
+        td
+p
+  =link_to 'Добавить информацию по займу', new_loan_path

@@ -3,6 +3,8 @@ table.table.table-hover#borrowers-list
   thread
     tr
       th Название
+      th Информация по займу
+      th История платежей
     tbody
     -unless @borrowers.empty?
       = render @borrowers

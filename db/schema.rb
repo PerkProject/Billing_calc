@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170618113637) do
+ActiveRecord::Schema.define(version: 20170620174616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20170618113637) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["investor_id"], name: "index_borrowers_on_investor_id"
+  end
+
+  create_table "history_payments", force: :cascade do |t|
+    t.integer "month"
+    t.float "payment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "investors", force: :cascade do |t|
