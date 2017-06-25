@@ -2,9 +2,8 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :borrowers
-  resources :loans do
-      resources :history_payments
-  end  
+  resources :loans
+  resources :history_payments
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'welcome#index'
